@@ -10,7 +10,7 @@ char s[100];                         // вихідний рядок
 char p1[100];
 
 const int n = 20;
-typedef char array[n][n];
+typedef char array[n][n];   //app day
 array arr;                           // масив слів
 
 void create_words(char str[], array mas, char p1[]);  // 
