@@ -6,14 +6,14 @@
 
 using namespace std;
 
-char s[100];                         // вихідний рядок
+char s[100];                         // output string
 char p1[100];
 
 const int n = 20;
-typedef char array[n][n];   //app day
-array arr;                           // масив слів
+typedef char array[n][n];   
+array arr;                           // array of words
 
-void create_words(char str[], array mas, char p1[]);  // 
+void invert_words(char str[], array mas, char p1[]);   // invert words, that occupy pair positions
 
 
 
@@ -21,22 +21,22 @@ int main()
 {
 	
 	puts("enter string:");
-	gets(s);                         // ввести рядок
-	create_words(s, arr,p1);        // визначити перелік і кількість слів у рядку
+	gets(s);                         // input string
+	invert_words(s, arr,p1);        // invert words, that occupy pair positions
 	system("pause");
 }
 
-void create_words(char str[], array mas, char p1[])
+void invert_words(char str[], array mas, char p1[])
 {
-	int k = 0;                       // кількість лексем у рядку
-	char *delimiter = "., ";         // покажчик на розділові символи
-	char *p;                         // покажчик на поточну лексему
-	p = strtok(s, delimiter);        // визначити першу лексему
-	while (p != NULL)                // поки є рядку є лексеми
+	int k = 0;                     
+	char *delimiter = "., ";       
+	char *p;                     
+	p = strtok(s, delimiter);       
+	while (p != NULL)                
 	{
-		strcpy(mas[k], p);           // копіювати поточну лексему в масив
-		k++;                         // перейти до наступної лексеми
-		p = strtok(NULL, delimiter); // продовжити пошук лексем
+		strcpy(mas[k], p);           
+		k++;                         
+		p = strtok(NULL, delimiter); 
 	}
 	for (int j = 1; j < k+1; j++){
 		if (j % 2 != 0){
