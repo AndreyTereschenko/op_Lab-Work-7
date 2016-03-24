@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//standart strings
 char s[100];                         // output string
 char p1[100];
 
